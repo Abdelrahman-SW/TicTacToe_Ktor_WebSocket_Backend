@@ -1,0 +1,1 @@
+A TicTacToe Ktor WebSocket Backend is a server-side application built using the Ktor framework that facilitates real-time communication between players in a TicTacToe game. The backend uses WebSocket to enable two-way communication, allowing players to make moves and receive updates in real-time.
