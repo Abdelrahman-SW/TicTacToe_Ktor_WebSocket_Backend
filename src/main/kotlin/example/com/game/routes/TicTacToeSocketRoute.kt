@@ -30,6 +30,7 @@ fun Route.ticTacToeGameRoute(game: TicTacToeGame) {
         }
         finally {
             game.disconnectPlayer(player)
+            game.resetGame()
         }
     }
 }

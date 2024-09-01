@@ -1,6 +1,5 @@
 package example.com.game.models
 
-import io.ktor.util.reflect.*
 import kotlinx.serialization.Serializable
 
 @Serializable

@@ -8,7 +8,8 @@ data class GameState(
     val board : Array<Array<Char?>> = emptyBoard(),
     val winingPlayer: Player? = null,
     val isBoardFull : Boolean = false,
-    val connectedPlayers : List<Player> = emptyList()
+    val connectedPlayers : List<Player> = emptyList(),
+    val countdown : Int = 0
 ) {
     companion object {
         fun emptyBoard() : Array<Array<Char?>>  {
@@ -22,7 +23,7 @@ data class GameState(
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
-        if (javaClass != other?.javaClass) return false
+        if (other == null || this::class != other::class) return false
 
         other as GameState
 
@@ -31,6 +32,7 @@ data class GameState(
         if (winingPlayer != other.winingPlayer) return false
         if (isBoardFull != other.isBoardFull) return false
         if (connectedPlayers != other.connectedPlayers) return false
+        if (countdown != other.countdown) return false
 
         return true
     }
@@ -41,6 +43,7 @@ data class GameState(
         result = 31 * result + (winingPlayer?.hashCode() ?: 0)
         result = 31 * result + isBoardFull.hashCode()
         result = 31 * result + connectedPlayers.hashCode()
+        result = 31 * result + countdown
         return result
     }
 }
